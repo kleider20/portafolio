@@ -3,8 +3,10 @@ services:
     name: portafolio
     runtime: php
     env: render
+    region: virginia
     buildCommand: composer install && npm install && npm run build
     startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    plan: free
     envVars:
       - key: APP_ENV
         value: production
